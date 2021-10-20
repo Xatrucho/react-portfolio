@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-router",
+  "name": "marlon-ponce-react-portfolio",
   "version": "1.0.0",
-  "description": "Basic skeleton codebase for React/Redux/Router applications.",
+  "description": "Skeleton portfolio app in react",
   "scripts": {
     "preinstall": "npm set audit false",
     "start": "webpack-dev-server --config webpack/dev.config.js --watch",
@@ -9,6 +9,7 @@
     "heroku-postbuild": "npm run build",
     "precommit": "eslint src",
     "prod": "NODE_ENV=production node server.js"
+    
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,7 @@
     "sass",
     "css module"
   ],
-  "author": "Your Name Here",
+  "author": "Marlon Ponce",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bottega-code-school/js-builder/issues"
