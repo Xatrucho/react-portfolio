@@ -38,7 +38,8 @@ export default class PortfolioForm extends Component {
     }
 
     deleteImage(imageType) {
-       axios.delete(
+       axios
+        .delete(
            `https://api.devcamp.space/portfolio/delete-portfolio-image/${this.state
             .id}?image_type=${imageType}`, 
        { withCredentials: true }
@@ -46,11 +47,11 @@ export default class PortfolioForm extends Component {
        .then(res => {
            this.setState({
             [`${imageType}_url`]: ""
-       })
+       });
     })
        .catch(error => {
            console.log("deleteImage error", error);
-       })
+       });
     }
 
     componentDidUpdate() {
@@ -264,14 +265,15 @@ _
                     )}       
 
                     {this.state.banner_image_url && this.state.editMode ? (
-                     <div className="portfolio-manager-image-wrapper">   
-                        <img src={this.state.banner_image_url} />
-                        <div className="image-removal-link">
-                            <a onClick={() => this.deleteImage("banner_image")}>
-                                remove file
-                            </a>
-                        </div>
-                     </div>   
+                        <div className="portfolio-manager-image-wrapper">   
+                            <img src={this.state.banner_image_url} />
+
+                            <div className="image-removal-link">
+                                <a onClick={() => this.deleteImage("banner_image")}>
+                                    remove file
+                                </a>
+                            </div>
+                        </div>   
                      ):(
                     
                     <DropzoneComponent
